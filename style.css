@@ -1,0 +1,20 @@
+h1 {
+  color: blue;
+}
+
+@font-face {
+  font-family: "Oswald-Regular";
+  src: url("assets/fonts/Oswald-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+body {
+  background: white;
+}
+
+* {
+  font-family: "Oswald-Regular";
+}
+
+/*# sourceMappingURL=style.css.map */
