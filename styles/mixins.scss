@@ -1,3 +1,5 @@
-h1 {
-    color: blue;
+@mixin media($px) {
+    @media screen and (min-width: px ) {
+      @content
+    }
 }
