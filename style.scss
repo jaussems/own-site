@@ -36,25 +36,63 @@ body {
     align-items: center;
     flex-direction: column;
     padding: 5rem 0;
-    box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
     text-align: center;
-    img {
-      height: 30rem;
-      width: 30rem;
-      border-radius: 0.25rem;
-      box-shadow: rgba(173, 94, 94, 0.45) 0px 25px 20px -20p;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    color: red;
+    height: 5rem;
+
+    &__name {
+      display: flex;
+      flex-grow: 1;
+      align-items: center;
+      width: 10rem;
+      flex-flow: column;
+      align-self: center;
+      padding-left: 2rem;
+    }
+
+    &__list {
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+      list-style: none;
+      align-items: center;
+      &__item {
+        &:hover {
+          transition: 1.2s;
+          color: black;
+          cursor: pointer;
+        }
+      }
     }
   }
-  &__story {
-    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20p;
-    height: 20rem;
 
+  &__story {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    gap: 10rem;
+    align-items: center;
+    padding: 0 10rem;
+
+    @include responsive(20rem) {
+      flex-direction: column-reverse;
+      padding: 0 1rem;
+    }
+
+    @include responsive(60rem) {
+      flex-direction: row;
+      padding: 0 5rem;
+    }
     &__text {
-      padding: 0 10rem;
       font-size: 1.5rem;
 
       &::first-letter {
-        initial-letter: 4 1;
+        initial-letter: 3 1;
         font-weight: 800;
         padding-right: 1rem;
         font-family: "Macondo-Regular";
@@ -63,10 +101,51 @@ body {
         -webkit-background-clip: text;
       }
     }
+
+    img {
+      height: 30rem;
+      width: 30rem;
+      border-radius: 0.25rem;
+      box-shadow: rgba(173, 94, 94, 0.45) 0px 25px 20px -20p;
+    }
   }
+
   &__skills {
+    h1 {
+      font-size: 5rem;
+    }
     box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20p;
-    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10rem;
+    padding: 0 5rem;
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      text-align: center;
+      gap: 2.5rem;
+      @include responsive(20rem) {
+        margin-top: 5rem;
+        gap: 5rem;
+        font-size: 2rem;
+      }
+      @include responsive(40rem) {
+        margin-top: 5rem;
+        gap: 1.5rem;
+        font-size: 1rem;
+      }
+      justify-content: space-evenly;
+      &__item {
+        display: flex;
+        flex-direction: column-reverse;
+        img {
+          @include icon;
+          align-self: center;
+        }
+      }
+    }
   }
   &__portfolio {
     box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20p;

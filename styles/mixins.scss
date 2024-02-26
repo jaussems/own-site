@@ -1,5 +1,10 @@
-@mixin media($px) {
-    @media screen and (min-width: px ) {
-      @content
-    }
+@mixin responsive($value) {
+  @media (min-width: $value) {
+    @content;
+  }
+}
+
+@mixin icon() {
+  height: 5rem;
+  width: 5rem;
 }
