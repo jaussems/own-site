@@ -28,25 +28,60 @@ body {
   align-items: center;
   flex-direction: column;
   padding: 5rem 0;
-  box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
   text-align: center;
 }
-.page__welcome img {
-  height: 30rem;
-  width: 30rem;
-  border-radius: 0.25rem;
-  box-shadow: rgba(173, 94, 94, 0.45) 0px 25px 20px -20p;
+.page__header {
+  display: flex;
+  flex-direction: row;
+  color: red;
+  height: 5rem;
+}
+.page__header__name {
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  width: 10rem;
+  flex-flow: column;
+  align-self: center;
+  padding-left: 2rem;
+}
+.page__header__list {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  list-style: none;
+  align-items: center;
+}
+.page__header__list__item:hover {
+  transition: 1.2s;
+  color: black;
+  cursor: pointer;
 }
 .page__story {
-  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20p;
-  height: 20rem;
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+  gap: 10rem;
+  align-items: center;
+  padding: 0 10rem;
+}
+@media (min-width: 20rem) {
+  .page__story {
+    flex-direction: column-reverse;
+    padding: 0 1rem;
+  }
+}
+@media (min-width: 60rem) {
+  .page__story {
+    flex-direction: row;
+    padding: 0 5rem;
+  }
 }
 .page__story__text {
-  padding: 0 10rem;
   font-size: 1.5rem;
 }
 .page__story__text::first-letter {
-  initial-letter: 4 1;
+  initial-letter: 3 1;
   font-weight: 800;
   padding-right: 1rem;
   font-family: "Macondo-Regular";
@@ -54,9 +89,52 @@ body {
   color: transparent;
   -webkit-background-clip: text;
 }
+.page__story img {
+  height: 30rem;
+  width: 30rem;
+  border-radius: 0.25rem;
+  box-shadow: rgba(173, 94, 94, 0.45) 0px 25px 20px -20p;
+}
 .page__skills {
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20p;
-  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10rem;
+  padding: 0 5rem;
+}
+.page__skills h1 {
+  font-size: 5rem;
+}
+.page__skills__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+  gap: 2.5rem;
+  justify-content: space-evenly;
+}
+@media (min-width: 20rem) {
+  .page__skills__list {
+    margin-top: 5rem;
+    gap: 5rem;
+    font-size: 2rem;
+  }
+}
+@media (min-width: 40rem) {
+  .page__skills__list {
+    margin-top: 5rem;
+    gap: 1.5rem;
+    font-size: 1rem;
+  }
+}
+.page__skills__list__item {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.page__skills__list__item img {
+  height: 5rem;
+  width: 5rem;
+  align-self: center;
 }
 .page__portfolio {
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20p;
