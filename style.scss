@@ -31,6 +31,10 @@ body {
 }
 
 .page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5rem;
   &__welcome {
     display: flex;
     align-items: center;
@@ -44,7 +48,7 @@ body {
     flex-direction: row;
     color: red;
     height: 5rem;
-
+    font-size: 1.25rem;
     &__name {
       display: flex;
       flex-grow: 1;
@@ -52,7 +56,7 @@ body {
       width: 10rem;
       flex-flow: column;
       align-self: center;
-      padding-left: 2rem;
+      padding-left: 5rem;
     }
 
     &__list {
@@ -148,8 +152,33 @@ body {
     }
   }
   &__portfolio {
-    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20p;
-    height: 20rem 0;
+    padding: 0 5rem;
+    h1 {
+      font-size: 5rem;
+    }
+    &__cardslist {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+      margin-top: 5rem;
+      justify-content: center;
+    }
+    &__card {
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+        rgba(0, 0, 0, 0.22) 0px 10px 10px;
+      height: 15rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 15rem;
+      border-radius: 1rem;
+      padding: 0.75rem;
+
+      &__icon {
+        height: 4rem;
+      }
+    }
   }
   &__contact {
     box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20p;

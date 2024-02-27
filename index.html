@@ -7,6 +7,11 @@
   </head>
   <body class="page">
     <script src="main.js"></script>
+    <dialog>
+      <button id="dialog-close-btn" autofocus>Close</button>
+      <p>This modal dialog has a groovy backdrop!</p>
+    </dialog>
+    <button id="dialog-show-btn">Show the dialog</button>
     <div class="page__header">
       <p class="page__header__name">Jannes Aussems</p>
       <ul class="page__header__list">
@@ -16,7 +21,6 @@
         <li class="page__header__list__item">Contact</li>
       </ul>
     </div>
-    <div class="page__welcome"></div>
     <div class="page__story">
       <p class="page__story__text">
         In 2019, I embarked on a transformative journey. I decided to reinvent
@@ -97,6 +101,26 @@
         <li class="page__skills__list__item">
           <p>Redux</p>
           <img src="assets/technology-icons/redux.png" />
+        </li>
+      </ul>
+    </div>
+    <div class="page__portfolio">
+      <h1>Portfolio</h1>
+      <ul class="page__portfolio__cardslist">
+        <li class="page__portfolio__card">
+          <img
+            class="page__portfolio__card__icon"
+            class=""
+            src="./assets/icons/movie.svg"
+          />
+          <p>I Watch Things</p>
+        </li>
+        <li class="page__portfolio__card">
+          <img
+            class="page__portfolio__card__icon"
+            src="./assets/icons/playing_cards.svg"
+          />
+          <p>Magic the Gathering Index</p>
         </li>
       </ul>
     </div>
