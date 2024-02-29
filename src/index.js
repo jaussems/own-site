@@ -8,12 +8,13 @@ const component = () => {
 
   return element;
 };
-
-const dialog = document.querySelector("dialog");
-const showButton = document.querySelector("dialog-show-btn");
-const closeButton = document.querySelector("dialog-close-btn");
+console.log(`Loadded`)
+const dialog = document.querySelectorAll("dialog");
+const showButton = document.getElementById("dialog-show-btn");
+const closeButton = document.getElementById("dialog-close-btn");
 
 showButton.addEventListener("click", () => {
+  console.log(`CLICKED on show button`)
   dialog.showModal();
 });
 
