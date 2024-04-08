@@ -183,7 +183,7 @@ button {
 }
 
 .animation--skills-list {
-  animation: popup 2s ease-in ;
+  animation: popup-skills 2s ease-in ;
 }
 
 .animation--story {
@@ -194,26 +194,3 @@ animation: fade-in 1.75s ease-in-out forwards;
 animation: pop-up 1s ease-in-out;
 }
 
-@keyframes pop-up {
-  0%{
-    transform: scale(1);
-  }
-  50%{
-    transform: scale(1.3);
-  }
-  60%{
-    transform: scale(1.1);
-  }
-  70%{
-    transform: scale(1.2);
-  }
-  80%{
-    transform: scale(1);
-  }
-  90%{
-    transform: scale(1.1);
-  }
-  100%{
-    transform: scale(1);
-  }
-}
