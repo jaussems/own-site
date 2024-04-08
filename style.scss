@@ -2,12 +2,14 @@
 @import "./styles/variables.scss";
 @import "./styles/mixins.scss";
 @import "./styles/fonts/fonts.scss";
+@import "./styles/animations.scss";
 
 // import the components
 
 @import "./styles/components/dialog.scss";
 body {
   background: white;
+  overflow-x: hidden;
 }
 
 * {
@@ -123,6 +125,7 @@ button {
       align-items: center;
       text-align: center;
       gap: 2.5rem;
+      
       @include responsive(20rem) {
         margin-top: 5rem;
         gap: 5rem;
@@ -178,3 +181,16 @@ button {
     height: 20rem;
   }
 }
+
+.animation--skills-list {
+  animation: popup-skills 2s ease-in ;
+}
+
+.animation--story {
+animation: fade-in 1.75s ease-in-out forwards; 
+}
+
+.animation--dialog {
+animation: pop-up 1s ease-in-out;
+}
+
