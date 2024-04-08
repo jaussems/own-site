@@ -1,0 +1,35 @@
+@keyframes popup {
+    0% {
+    opacity: 0;
+    scale: 0;
+    }
+
+    50% {
+        scale: 1.2;
+        overflow-x: hidden;
+    }
+
+
+    100% {
+    opacity: 1;
+    scale: 1;
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: translateX(-40%);
+    }
+
+    50% {
+        opacity: 0.4;
+      
+    }
+  
+
+    100% {
+        opacity: 1;
+        transform: translateX(0) ;
+    }
+}

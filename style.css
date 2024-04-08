@@ -1,3 +1,30 @@
+@keyframes popup {
+  0% {
+    opacity: 0;
+    scale: 0;
+  }
+  50% {
+    scale: 1.2;
+    overflow-x: hidden;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-40%);
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 @font-face {
   font-family: "Oswald-Regular";
   src: url("assets/fonts/Oswald-Regular.ttf") format("truetype");
@@ -11,6 +38,33 @@
   font-weight: 400;
   font-style: normal;
   font-display: swap;
+}
+@keyframes popup {
+  0% {
+    opacity: 0;
+    scale: 0;
+  }
+  50% {
+    scale: 1.2;
+    overflow-x: hidden;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-40%);
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 dialog {
   margin: 0 auto;
@@ -94,6 +148,7 @@ label {
 
 body {
   background: white;
+  overflow-x: hidden;
 }
 
 * {
@@ -250,4 +305,40 @@ button {
 .page__contact {
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20p;
   height: 20rem;
+}
+
+.animation--skills-list {
+  animation: popup 2s ease-in;
+}
+
+.animation--story {
+  animation: fade-in 1.75s ease-in-out forwards;
+}
+
+.animation--dialog {
+  animation: pop-up 1s ease-in-out;
+}
+
+@keyframes pop-up {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  80% {
+    transform: scale(1);
+  }
+  90% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }/*# sourceMappingURL=style.css.map */

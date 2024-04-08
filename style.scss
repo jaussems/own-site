@@ -2,12 +2,14 @@
 @import "./styles/variables.scss";
 @import "./styles/mixins.scss";
 @import "./styles/fonts/fonts.scss";
+@import "./styles/animations.scss";
 
 // import the components
 
 @import "./styles/components/dialog.scss";
 body {
   background: white;
+  overflow-x: hidden;
 }
 
 * {
@@ -123,6 +125,7 @@ button {
       align-items: center;
       text-align: center;
       gap: 2.5rem;
+      
       @include responsive(20rem) {
         margin-top: 5rem;
         gap: 5rem;
@@ -176,5 +179,41 @@ button {
   &__contact {
     box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20p;
     height: 20rem;
+  }
+}
+
+.animation--skills-list {
+  animation: popup 2s ease-in ;
+}
+
+.animation--story {
+animation: fade-in 1.75s ease-in-out forwards; 
+}
+
+.animation--dialog {
+animation: pop-up 1s ease-in-out;
+}
+
+@keyframes pop-up {
+  0%{
+    transform: scale(1);
+  }
+  50%{
+    transform: scale(1.3);
+  }
+  60%{
+    transform: scale(1.1);
+  }
+  70%{
+    transform: scale(1.2);
+  }
+  80%{
+    transform: scale(1);
+  }
+  90%{
+    transform: scale(1.1);
+  }
+  100%{
+    transform: scale(1);
   }
 }
