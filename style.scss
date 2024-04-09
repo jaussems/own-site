@@ -78,15 +78,24 @@ button {
     align-items: center;
     padding: 0 10rem;
 
-    @include responsive(20rem) {
-      flex-direction: column-reverse;
-      padding: 0 1rem;
+    @include responsive(512px)
+    {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    @include responsive(60rem) {
-      flex-direction: row;
-      padding: 0 5rem;
+    @include responsive(1312px)
+    {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
+
+    &__container {
+  
+    }
+
     &__text {
       font-size: 1.5rem;
 
