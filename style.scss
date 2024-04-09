@@ -18,11 +18,10 @@ body {
   padding: 0;
 }
 button {
+  align-items: center;
   width: 5.5rem;
   border: none;
   border-radius: 0.25rem;
-
-  align-items: center;
 }
 
 .page {
@@ -44,6 +43,15 @@ button {
     color: red;
     height: 5rem;
     font-size: 1.25rem;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: white;
+    -webkit-box-shadow: 0 4px 6px -6px #222;
+    -moz-box-shadow: 0 4px 6px -6px #222;
+    box-shadow: 0 4px 6px -6px #222;
+  
+
     &__name {
       display: flex;
       flex-grow: 1;
@@ -124,8 +132,6 @@ button {
       gap: 1rem;
       margin-top: 0.75rem;
 
-    
-
       &__icon {
         height: 2.75rem;
         width: 2.75rem;
@@ -135,14 +141,13 @@ button {
         &:hover {
           opacity: 1;
           transform: scale(1.15);
+          filter: saturate(1.5);
         }
   
         @include responsive(10rem) {
           height: 4.75rem;
           width: 4.75rem;
         }
-
-
       }
     }
   }
