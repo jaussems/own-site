@@ -1,7 +1,12 @@
 const dialog = document.querySelector("dialog");
 const contact = document.getElementById("contact");
 const closeButton = document.getElementById("dialog-close-btn");
+const navLinks = document.querySelectorAll(".page__header__list__item");
 const nameInput = document.getElementsByClassName("name-input");
+const storySection = document.querySelector("div.page__story");
+const skillsSection = document.querySelector("div.page__skills");
+const portfolioSection = document.querySelector("div.page__portfolio");
+
 
 
 contact.addEventListener("click", () => {
@@ -13,6 +18,21 @@ contact.addEventListener("click", () => {
 closeButton.addEventListener("click", () => {
   dialog.close();
 });
+
+navLinks.forEach((navlink) => {
+  navlink.addEventListener("click", () => {
+    
+    switch(navlink.attributes.getNamedItem("name").value)
+    {
+      case "story": storySection.scrollIntoView({behavior: "smooth", block: "start",  inline: "start"});
+      break;
+      case "skills": skillsSection.scrollIntoView({behavior: "smooth", block: "start"});
+      break;
+      case "portfolio": portfolioSection.scrollIntoView({behavior: "smooth", block: "start"});
+      break;
+    }
+  })
+})
 
 var isInViewport = function (elem) {
   var bounding = elem.getBoundingClientRect();
