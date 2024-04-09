@@ -101,11 +101,40 @@ button {
       // }
     }
 
-    img {
+    
+
+    &__picture {
       height: 30rem;
       width: 30rem;
       border-radius: 0.25rem;
       box-shadow: rgba(173, 94, 94, 0.45) 0px 25px 20px -20p;
+    }
+
+    &__links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.75rem;
+
+    
+
+      &__icon {
+        height: 2.75rem;
+        width: 2.75rem;
+        gap: 2rem;
+
+         
+        &:hover {
+          opacity: 1;
+          transform: scale(1.15);
+        }
+  
+        @include responsive(10rem) {
+          height: 4.75rem;
+          width: 4.75rem;
+        }
+
+
+      }
     }
   }
 
