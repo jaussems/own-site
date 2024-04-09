@@ -24,7 +24,7 @@ navLinks.forEach((navlink) => {
     
     switch(navlink.attributes.getNamedItem("name").value)
     {
-      case "story": storySection.scrollIntoView({behavior: "smooth", block: "start",  inline: "start"});
+      case "story": storySection.scrollIntoView({behavior: "smooth", block: "start"});
       break;
       case "skills": skillsSection.scrollIntoView({behavior: "smooth", block: "start"});
       break;
