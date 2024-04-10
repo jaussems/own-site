@@ -1,20 +1,51 @@
 const dialog = document.querySelector("dialog");
 const contact = document.getElementById("contact");
 const closeButton = document.getElementById("dialog-close-btn");
+const navLinks = document.querySelectorAll(".page__header__list__item");
+const navLinksMobile = document.querySelectorAll(".page__mobile-menu__list__item");
 const nameInput = document.getElementsByClassName("name-input");
 const mobileIcon = document.querySelector("div.page__mobile-menu__icon");
 const mobileMenuList = document.querySelector("ul.page__mobile-menu__list");
 let isShownMenu = false;
-
+const storySection = document.querySelector("div.page__story");
+const skillsSection = document.querySelector("div.page__skills");
+const portfolioSection = document.querySelector("div.page__portfolio");
 
 contact.addEventListener("click", () => {
-  console.log(`CLICKED on show button`)
   dialog.showModal();
   document.getElementById("dialog").scrollIntoView();
 });
 
 closeButton.addEventListener("click", () => {
   dialog.close();
+});
+
+const handleNavLinkClick = (navlink) => {
+  const navlinkName = navlink.attributes.getNamedItem("name").value;
+  
+  switch (navlinkName) {
+    case "story":
+      storySection.scrollIntoView({ behavior: "smooth", block: "start", inline: "start" });
+      break;
+    case "skills":
+      skillsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      break;
+    case "portfolio":
+      portfolioSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      break;
+  }
+};
+
+navLinks.forEach((navlink) => {
+  navlink.addEventListener("click", () => {
+    handleNavLinkClick(navlink);
+  });
+});
+
+navLinksMobile.forEach((navlink) => {
+  navlink.addEventListener("click", () => {
+    handleNavLinkClick(navlink);
+  });
 });
 
 var isInViewport = function (elem) {
@@ -44,13 +75,13 @@ window.addEventListener('scroll', () => {
 
 mobileIcon.addEventListener("click", () => {
   isShownMenu = !isShownMenu;
-  console.log(`Chjecking ${mobileMenuList}`)
+
+  console.log(`Chjecking ${navLinksMobile.length}`)
   if(isShownMenu) 
   {
     mobileMenuList.classList.add("page__mobile-menu__list--show");
   }
   else {
-    isShownMenu = false;
     mobileMenuList.classList.remove("page__mobile-menu__list--show");
   }
 })
