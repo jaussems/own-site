@@ -1,9 +1,154 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Output Management</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1"><script defer src="main.js"></script></head>
-  <body>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <title>A website about Jannes Aussems</title>
+  <link rel="stylesheet" href="../style.css" />
+  <script src="main.js" async></script>
+</head>
+
+<body class="page">
+  <dialog id="dialog" class="animation--dialog">
+    <div class="dialog__container">
+      <div class="dialog__container__header">
+        <button id="dialog-close-btn" class="dialog__container__header__close-btn">X</button>
+      </div>
+      <form class="dialog__container__form">
+        <label> Enter your name</label>
+        <input class="name-input" autofocus />
+        <label> Enter your Message here</label>
+        <textarea></textarea>
+        <button class="dialog__container__form__send-btn">Send</button>
+      </form>
+      <div class="dialog__container__footer"></div>
+    </div>
+  </dialog>
+  <div class="page__header">
+    <p class="page__header__name">Jannes Aussems</p>
+    <ul class="page__header__list">
+      <li class="page__header__list__item" name="story">Story</li>
+      <li class="page__header__list__item" name="skills">Skills</li>
+      <li class="page__header__list__item" name="portfolio">Portfolio</li>
+      <li id="contact" class="page__header__list__item">Contact</li>
+    </ul>
+  </div>
+  <div class="page__mobile-menu">
+    <div class="page__mobile-menu__icon"> 
+      <div class="page__mobile-menu__icon__bar1"></div>
+      <div class="page__mobile-menu__icon__bar2"></div>
+      <div class="page__mobile-menu__icon__bar3"></div>
+    </div>
+    <ul class="page__mobile-menu__list">
+      <li class="page__mobile-menu__list__item" name="story">Story</li>
+      <li class="page__mobile-menu__list__item" name="skills">Skills</li>
+      <li class="page__mobile-menu__list__item" name="portfolio">Portfolio</li>
+    </ul>
+  </div>
+  <div class="page__story animation--story">
+    <div class="page__story__container">
+    <p class="page__story__text">
+      In 2019, I embarked on a transformative journey. I decided to reinvent
+      myself and pursue my passion for technology. I enrolled in a full-stack
+      development bootcamp called Codaisseur, where I immersed myself in the
+      world of coding and software development. Since then, I've been on a
+      continuous learning journey, always striving to improve my skills and
+      expand my knowledge. I firmly believe in the importance of having a
+      growth mindset, especially in the fast-paced world of technology. For
+      me, the most enjoyable aspect of being a developer is the opportunity to
+      learn new things every day. As a result of my dedication and hard work,
+      I've had the privilege of working with various companies, gaining
+      valuable experience in designing apps and creating innovative solutions.
+      Over the past two and a half years, I've had the opportunity to work on
+      frontend websites and build mobile apps, honing my skills and
+      contributing to the success of each project. I'm excited about the
+      future and the endless possibilities that lie ahead. I'm committed to
+      continuing my journey as a developer, always seeking new challenges and
+      opportunities for growth.
+    </p>
+    <div class="page__story__links">
+      <a href="https://www.linkedin.com/in/jannesaussems/"><img class="page__story__links__icon" src="assets/icons/LinkedIn_icon.svg"/></a>
+      <a href="https://github.com/jaussems"><img class="page__story__links__icon" src="assets/icons/github-mark.svg"/></a>
+    </div>
+    </div>
+    <img class="page__story__picture" src="./assets/images/1648136251798.jpeg" />
+  </div>
+  <div class="page__skills">
+    <h1>Skills</h1>
+    <ul class="page__skills__list">
+      <li class="page__skills__list__item">
+        <p>Angular</p>
+        <img src="assets/technology-icons/angular_gradient.png" />
+      </li>
+      <li class="page__skills__list__item">
+        <p>HTML5</p>
+        <img src="assets/technology-icons/html5.png" />
+      </li>
+      <li class="page__skills__list__item">
+        <p>CSS</p>
+        <img src="assets/technology-icons/css.png" />
+      </li>
+      <li class="page__skills__list__item">
+        <p>SASS</p>
+        <img src="assets/technology-icons/sass.png" />
+      </li>
+      <li class="page__skills__list__item">
+        <p>Javascript</p>
+        <img src="assets/technology-icons/javascript.png" />
+      </li>
+      <li class="page__skills__list__item">
+        <p>NodeJs</p>
+        <img src="assets/technology-icons/nodejs.png" />
+      </li>
+      <li class="page__skills__list__item">
+        <p>Typescript</p>
+        <img src="assets/technology-icons/typescript.png" />
+      </li>
+      <li class="page__skills__list__item">
+        <p>Express</p>
+        <img src="assets/technology-icons/express.png" />
+      </li>
+      <li class="page__skills__list__item">
+        <p>PostGres</p>
+        <img src="assets/technology-icons/postgress.png" />
+      </li>
+      <li class="page__skills__list__item">
+        <p>Sequelize</p>
+        <img src="assets/technology-icons/sequelize.png" />
+      </li>
+      <li class="page__skills__list__item">
+        <p>JestJs</p>
+        <img src="assets/technology-icons/jestjsio-icon.svg" />
+      </li>
+      <li class="page__skills__list__item">
+        <p>Graphql</p>
+        <img src="assets/technology-icons/graphql.png" />
+      </li>
+      <li class="page__skills__list__item">
+        <p>React</p>
+        <img src="assets/technology-icons/react.png" />
+      </li>
+      <li class="page__skills__list__item">
+        <p>Redux</p>
+        <img src="assets/technology-icons/redux.png" />
+      </li>
+    </ul>
+  </div>
+  <div class="page__portfolio">
+    <h1>Portfolio</h1>
+    <ul class="page__portfolio__cardslist">
+      <li class="page__portfolio__card">
+        <img class="page__portfolio__card__icon" class="" src="./assets/icons/movie.svg" />
+        <p>I Watch Things</p>
+      </li>
+      <li class="page__portfolio__card">
+        <img class="page__portfolio__card__icon" src="./assets/icons/playing_cards.svg" />
+        <p>Magic the Gathering Index</p>
+      </li>
+    </ul>
+  </div>
+  <div class="page__contact"></div>
+</body>
+
+
 </html>
