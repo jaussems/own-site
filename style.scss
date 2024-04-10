@@ -29,6 +29,49 @@ button {
   flex-direction: column;
   justify-content: space-between;
   gap: 5rem;
+
+  &__mobile-menu {
+    display: block;
+    z-index: 2;
+    background: white;
+    -webkit-box-shadow: 0 4px 6px -6px #222;
+    -moz-box-shadow: 0 4px 6px -6px #222;
+    box-shadow: 0 4px 6px -6px #222;
+
+    &__list {
+        display: none;
+       
+        align-items: center;
+        list-style: none;
+        font-size: 2rem;
+
+      &--show{
+        display: flex;
+        transition: 2.4s;
+        flex-direction: column;
+
+      }
+    }
+
+    &__icon {
+      width: 5rem;
+      height: 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      &__bar1, &__bar2, &__bar3 {
+        background-color: red;  
+        height: 0.25rem;
+        width: 1.75rem;
+        margin: 0.15rem;   
+        transition: 0.4s;   
+      }
+    }
+  }
+
   &__welcome {
     display: flex;
     align-items: center;
@@ -38,7 +81,7 @@ button {
   }
 
   &__header {
-    display: flex;
+    display: none;
     flex-direction: row;
     color: red;
     height: 5rem;
@@ -98,10 +141,6 @@ button {
       display: flex;
       flex-direction: column;
       align-items: center;
-    }
-
-    &__container {
-  
     }
 
     &__text {
