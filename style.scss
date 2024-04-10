@@ -4,9 +4,9 @@
 @import "./styles/fonts/fonts.scss";
 @import "./styles/animations.scss";
 
-// import the components
 
 @import "./styles/components/dialog.scss";
+
 body {
   background: white;
   overflow-x: hidden;
@@ -21,9 +21,9 @@ body {
 }
 button {
   align-items: center;
-  width: 5.5rem;
   border: none;
   border-radius: 0.25rem;
+  width: 5.5rem;
 }
 
 .page {
@@ -33,17 +33,21 @@ button {
   gap: 5rem;
 
   &__mobile-menu {
-    display: block;
-    z-index: 2;
     background: white;
+    box-shadow: 0 4px 6px -6px #222;
+    display: none;
+    z-index: 2;
     -webkit-box-shadow: 0 4px 6px -6px #222;
     -moz-box-shadow: 0 4px 6px -6px #222;
-    box-shadow: 0 4px 6px -6px #222;
+
+    @include responsive(500px)
+    {
+      display: block;
+    }
 
     &__list {
-        display: none;
-       
         align-items: center;
+        display: none;
         list-style: none;
         font-size: 2rem;
 
@@ -51,21 +55,19 @@ button {
         display: flex;
         transition: 2.4s;
         flex-direction: column;
-
       }
 
       &__item {
+        align-items: center;
+        cursor: pointer;
+        border-top: 1px solid red;
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem;
 
         &:first-child {
           border-top: none;
         }
-        cursor: pointer;
-        width: 100%;
-        text-align: center;
-        align-items: center;
-        padding: 0.5rem;
-        border-top: 1px solid red;
-      
       }
       
     }
@@ -98,7 +100,7 @@ button {
   }
 
   &__header {
-    display: none;
+    display: flex;
     flex-direction: row;
     color: red;
     height: 5rem;
@@ -110,6 +112,11 @@ button {
     -webkit-box-shadow: 0 4px 6px -6px #222;
     -moz-box-shadow: 0 4px 6px -6px #222;
     box-shadow: 0 4px 6px -6px #222;
+
+    @include responsive(500px)
+    {
+      display: none;
+    }
   
 
     &__name {
@@ -151,6 +158,9 @@ button {
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding: 0 1rem;
+      margin: 0;
+
     }
 
     @include responsive(1312px)
@@ -162,7 +172,8 @@ button {
 
     &__text {
       font-size: 1.5rem;
-
+      @include responsive(512px)
+      
       // &::first-letter {
       //   initial-letter: 3 1;
       //   font-weight: 800;
@@ -173,8 +184,6 @@ button {
       //   -webkit-background-clip: text;
       // }
     }
-
-    
 
     &__picture {
       height: 30rem;
