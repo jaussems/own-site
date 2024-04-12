@@ -2,12 +2,14 @@ const path = require('path');
 
 module.exports = {
     entry: [
-    './src/index',
+        './src/index.js',
+        './src/style.scss'
     ],
     mode: 'development',
     output: {
-        filename: 'main.js',
+        filename: 'index.js',
         path: path.resolve(__dirname, 'dist'),
+        clean: true,
         assetModuleFilename: (pathData) => {
             const filepath = path
               .dirname(pathData.filename)
@@ -17,32 +19,27 @@ module.exports = {
             return `${filepath}/[name].[hash][ext][query]`;
           },
     },
+  
     module: {
-        rules: [
-            {
-                test: /\.scss$/,
-                exclude: /node_modules/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: { outputPath: './', name: 'style.css'}
-                    },
-                    'sass-loader'
-                ]
-            },
-            {
-                test: /\.(png|jpg|jpeg|gif)$/i,
-                type: 'asset/resource',
-            },
-            {
-                test: /\.(svng)$/i,
-                type: 'asset/resource',
-            },
-            {
-               test: /\.(woff|woff2|eot|ttf|otf)$/i,
-               type: 'asset/resource',
-            },
-        ]
+       rules: [
+                {
+                    test: /\.js$/,
+                    exclude: /node_modules/,
+                    use: [],
+                }, 
+                {
+                    test: /\.scss$/,
+                    exclude: /node_modules/,
+                    use: [
+                        {
+                            loader: 'file-loader',
+                            options: { outputPath: '', name: 'style.css'}
+                        },
+                        'sass-loader'
+                    ]
+                },
+                
+            ]
     }
-    
+   // options: { outputPath: '', name: 'style.css'}
 }

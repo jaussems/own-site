@@ -1,3 +1,5 @@
+import './style.scss';
+
 const dialog = document.querySelector("dialog");
 const contact = document.getElementById("contact");
 const closeButton = document.getElementById("dialog-close-btn");
