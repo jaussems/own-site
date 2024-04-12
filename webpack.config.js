@@ -3,10 +3,12 @@ const path = require('path');
 module.exports = {
     entry: [
         './src/index.js',
-        './src/style.scss'
+        './src/style.scss',
+        './src/index.html'
     ],
     mode: 'development',
     output: {
+        publicPath: '/',
         filename: 'index.js',
         path: path.resolve(__dirname, 'dist'),
         clean: true,
@@ -38,7 +40,19 @@ module.exports = {
                         'sass-loader'
                     ]
                 },
-                
+                {
+                    test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                    type: 'asset/resource',
+                },
+                {
+                    test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                    type: 'asset/resource',
+                },
+                {
+                    test: /\.html$/i,
+                    loader: "html-loader",
+                  
+                },
             ]
     }
    // options: { outputPath: '', name: 'style.css'}
