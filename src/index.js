@@ -1,3 +1,6 @@
+
+import "./style.scss";
+
 const dialog = document.querySelector("dialog");
 const contact = document.getElementById("contact");
 const closeButton = document.getElementById("dialog-close-btn");
@@ -10,6 +13,7 @@ let isShownMenu = false;
 const storySection = document.querySelector("div.page__story");
 const skillsSection = document.querySelector("div.page__skills");
 const portfolioSection = document.querySelector("div.page__portfolio");
+
 
 contact.addEventListener("click", () => {
   dialog.showModal();

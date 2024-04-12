@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: [
@@ -18,10 +19,14 @@ module.exports = {
               .split("/")
               .slice(1)
               .join("/");
-            return `${filepath}/[name].[hash][ext][query]`;
+            return `${filepath}/[name].[ext][query]`;
           },
     },
-  
+    plugins: [
+        new HtmlWebpackPlugin({
+          template: 'src/index.html'
+        })
+    ],
     module: {
        rules: [
                 {
