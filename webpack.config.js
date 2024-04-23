@@ -1,64 +1,62 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+
+
 
 module.exports = {
     entry: [
         './src/index.js',
-        './src/style.scss',
-        './src/index.html'
     ],
     mode: 'development',
     output: {
-        publicPath: '/',
-        filename: 'index.js',
+        filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
-        clean: true,
+        chunkFilename: '[id].[chunkhash].js',
         assetModuleFilename: (pathData) => {
             const filepath = path
-              .dirname(pathData.filename)
-              .split("/")
-              .slice(1)
-              .join("/");
-            return `${filepath}/[name].[ext][query]`;
-          },
+                .dirname(pathData.filename)
+                .split("/")
+                .slice(1)
+                .join("/");
+            return `${filepath}/[name][ext]`;
+        },
     },
-    plugins: [
-        new HtmlWebpackPlugin({
-          template: 'src/index.html'
-        })
-    ],
+    plugins: [new HtmlWebpackPlugin({
+        template: "./src/index.html"
+    }), new MiniCssExtractPlugin()],
     module: {
-       rules: [
-                {
-                    test: /\.js$/,
-                    exclude: /node_modules/,
-                    use: [],
-                }, 
-                {
-                    test: /\.scss$/,
-                    exclude: /node_modules/,
-                    use: [
-                        {
-                            loader: 'file-loader',
-                            options: { outputPath: '', name: 'style.css'}
-                        },
-                        'sass-loader'
-                    ]
+        rules: [
+            {
+                test: /\.html$/i,
+                loader: "html-loader",
+                generator: {
+                    filename: 'static/[name][ext]',
                 },
-                {
-                    test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                    type: 'asset/resource',
-                },
-                {
-                    test: /\.(woff|woff2|eot|ttf|otf)$/i,
-                    type: 'asset/resource',
-                },
-                {
-                    test: /\.html$/i,
-                    loader: "html-loader",
-                  
-                },
-            ]
-    }
-   // options: { outputPath: '', name: 'style.css'}
+            },
+
+            {
+                test: /\.(sass|scss)$/,
+                sideEffects: true,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    "css-loader",
+                    "sass-loader",
+                ]
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf)$/,
+                type: "asset/inline",
+            }
+        ]
+    },
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new CssMinimizerPlugin()
+        ],
+    },
+
+
 }
