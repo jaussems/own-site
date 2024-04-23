@@ -10,6 +10,9 @@ module.exports = {
         './src/index.js',
     ],
     mode: 'development',
+    devServer: {
+        static: './dist',
+    },
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
@@ -53,6 +56,7 @@ module.exports = {
     },
     optimization: {
         minimize: true,
+        runtimeChunk: 'single',
         minimizer: [
             new CssMinimizerPlugin()
         ],
