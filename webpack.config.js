@@ -8,15 +8,18 @@ const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 module.exports = {
     entry: [
         './src/index.js',
+        './src/style.scss',
     ],
     mode: 'development',
     devServer: {
         static: './dist',
     },
+
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
         chunkFilename: '[id].[chunkhash].js',
+        clean: true,
         assetModuleFilename: (pathData) => {
             const filepath = path
                 .dirname(pathData.filename)
@@ -40,27 +43,23 @@ module.exports = {
             },
 
             {
-                test: /\.(sass|scss)$/,
+                test: /\.(sass|scss|css)$/,
                 sideEffects: true,
                 use: [
-                    MiniCssExtractPlugin.loader,
+                    "style-loader",
                     "css-loader",
                     "sass-loader",
                 ]
             },
             {
-                test: /\.(woff|woff2|eot|ttf)$/,
-                type: "asset/inline",
-            }
+                test: /\.(|ttf|woff2?)(\?v=\d+\.\d+\.\d+)?$/i,
+                type: 'asset/resource',
+            },
         ]
     },
     optimization: {
         minimize: true,
         runtimeChunk: 'single',
-        minimizer: [
-            new CssMinimizerPlugin()
-        ],
+
     },
-
-
 }
