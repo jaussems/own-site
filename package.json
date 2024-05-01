@@ -6,17 +6,28 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "watch" : "sass --watch style.scss style.css"
+    "dev": "webpack --mode development --watch",
+    "start": "webpack serve --open",
+    "watch": "sass --watch style.scss style.css"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "css-loader": "^7.1.1",
+    "css-minimizer-webpack-plugin": "^6.0.0",
+    "file-loader": "^6.2.0",
+    "html-loader": "^5.0.0",
     "html-webpack-plugin": "^5.6.0",
-    "sass": "^1.71.1",
-    "sass-loader": "^14.1.1",
-    "webpack": "^5.90.3",
-    "webpack-cli": "^5.1.4"
+    "mini-css-extract-plugin": "^2.8.1",
+    "node-sass": "^9.0.0",
+    "sass": "^1.75.0",
+    "sass-loader": "^14.2.0",
+    "style-loader": "^4.0.0",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
   },
   "dependencies": {
     "lodash": "^4.17.21"
